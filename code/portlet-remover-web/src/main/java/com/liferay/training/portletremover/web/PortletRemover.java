@@ -33,12 +33,14 @@ import com.liferay.training.portletremover.service.PortletRemoverService;
 )
 public class PortletRemover extends MVCPortlet {
 
+    private static final String RQ_ATTR_FOUND_PORTLETS = "foundPortlets";
+
     private PortletRemoverService serviceRef;
 
     @Override
     public void doView(RenderRequest request, RenderResponse response) throws IOException, PortletException {
         Layout currentLayout = (Layout) request.getAttribute(WebKeys.LAYOUT);
-        request.setAttribute("result", this.serviceRef.getPortlets(currentLayout));
+        request.setAttribute(RQ_ATTR_FOUND_PORTLETS, this.serviceRef.getPortlets(currentLayout));
         super.doView(request, response);
     }
 
