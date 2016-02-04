@@ -1,0 +1,10 @@
+-dsannotations: *
+-sources: true
+Bundle-Version: 0.0.1
+Service-Component: *
+Import-Package: \
+    javax.portlet,\
+    javax.servlet,\
+    *
+-jsp: *.jsp, *.jpsf
+-plugin.jsp: com.liferay.ant.bnd.jsp.JspAnalyzerPlugin
