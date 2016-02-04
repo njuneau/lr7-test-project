@@ -1,3 +1,4 @@
+package com.liferay.training.portletremover.web;
 import javax.portlet.Portlet;
 
 import org.osgi.service.component.annotations.Component;
