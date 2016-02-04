@@ -90,8 +90,9 @@
         <!-- Service API dependency -->
         <dependency>
             <groupId>com.liferay.training</groupId>
-            <artifactId>portlet-remover-svc</artifactId>
+            <artifactId>portlet-remover-api</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
