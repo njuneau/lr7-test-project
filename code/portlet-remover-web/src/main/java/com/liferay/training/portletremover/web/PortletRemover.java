@@ -10,6 +10,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.Layout;
 import com.liferay.training.portletremover.service.PortletRemoverService;
 
 /**
@@ -35,8 +37,8 @@ public class PortletRemover extends MVCPortlet {
 
     @Override
     public void doView(RenderRequest request, RenderResponse response) throws IOException, PortletException {
-        String result = this.serviceRef.testService();
-        request.setAttribute("result", result);
+        Layout currentLayout = (Layout) request.getAttribute(WebKeys.LAYOUT);
+        request.setAttribute("result", this.serviceRef.getPortlets(currentLayout));
         super.doView(request, response);
     }
 
