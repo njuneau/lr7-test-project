@@ -1,9 +1,16 @@
 package com.liferay.training.portletremover.web;
+import java.io.IOException;
+
 import javax.portlet.Portlet;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.training.portletremover.service.PortletRemoverService;
 
 /**
  * This component scans for the portlets in the current page in order to be able
@@ -23,5 +30,19 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
     }
 )
 public class PortletRemover extends MVCPortlet {
+
+    private PortletRemoverService serviceRef;
+
+    @Override
+    public void doView(RenderRequest request, RenderResponse response) throws IOException, PortletException {
+        String result = this.serviceRef.testService();
+        request.setAttribute("result", result);
+        super.doView(request, response);
+    }
+
+    @Reference
+    protected void setServiceRef(PortletRemoverService serviceRef) {
+        this.serviceRef = serviceRef;
+    }
 
 }

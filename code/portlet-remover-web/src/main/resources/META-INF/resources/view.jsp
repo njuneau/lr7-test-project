@@ -1,3 +1,3 @@
 <%@ include file="init.jsp" %>
 
-<h2>Hello!</h2>
+<h2><%= renderRequest.getAttribute("result") %></h2>

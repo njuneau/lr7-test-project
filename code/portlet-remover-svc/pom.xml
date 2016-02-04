@@ -7,7 +7,7 @@
         <version>0.0.1</version>
         <relativePath>../</relativePath>
     </parent>
-    <artifactId>portlet-remover-web</artifactId>
+    <artifactId>portlet-remover-svc</artifactId>
     <packaging>bundle</packaging>
 
 
@@ -46,38 +46,8 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.1_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.spec.javax.el</groupId>
-            <artifactId>jboss-el-api_2.2_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>
             <artifactId>jboss-servlet-api_3.0_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet.jsp</groupId>
-            <artifactId>jboss-jsp-api_2.2_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet.jstl</groupId>
-            <artifactId>jboss-jstl-api_1.2_spec</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>biz.aQute.bnd</groupId>
-            <artifactId>biz.aQute.bnd.annotation</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -90,8 +60,9 @@
         <!-- Service API dependency -->
         <dependency>
             <groupId>com.liferay.training</groupId>
-            <artifactId>portlet-remover-svc</artifactId>
+            <artifactId>portlet-remover-api</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -104,10 +75,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -126,13 +93,9 @@
                 </dependencies>
                 <configuration>
                     <instructions>
-                        <Import-Package>javax.portlet,javax.servlet,*</Import-Package>
-                        <Service-Component>*</Service-Component>
+                        <Private-Package>com.liferay.training.portletremover.service.impl</Private-Package>
+                        <Import-Package>com.liferay.portal.service;version="7.0.0",org.osgi.framework;version="[1.7,2)",*</Import-Package>
                         <_dsannotations>*</_dsannotations>
-                        <_sources>true</_sources>
-                        <_jsp>*.jsp, *.jpsf</_jsp>
-                        <_plugin.jsp>com.liferay.ant.bnd.jsp.JspAnalyzerPlugin</_plugin.jsp>
-                        <_includeresource>META-INF/resources=src/main/resources/META-INF/resources</_includeresource>
                     </instructions>
                 </configuration>
             </plugin>
