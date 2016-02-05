@@ -1,6 +1,8 @@
 package com.liferay.training.portletremover.web;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -46,6 +48,8 @@ public class PortletRemover extends MVCPortlet {
     private static final String RQ_ATTR_FOUND_PORTLETS = "foundPortlets";
     private static final String RQ_PARAM_PORTLET_ID = "portletId";
 
+    private static final Pattern PATTERN_PORTLET_ID = Pattern.compile("^[a-zA-Z0-9_\\-]+$");
+
     private PortletRemoverService serviceRef;
 
     /**
@@ -73,15 +77,18 @@ public class PortletRemover extends MVCPortlet {
         String portletId = ParamUtil.getString(request, RQ_PARAM_PORTLET_ID, null);
 
         if(portletId != null) {
-            try {
-                this.serviceRef.removePortlet(currentLayout, portletId);
-            } catch(PortalException e) {
-                LOG.error("Unable to remove portlet", e);
+            Matcher m = PATTERN_PORTLET_ID.matcher(portletId);
+
+            if(m.matches()) {
+                try {
+                    this.serviceRef.removePortlet(currentLayout, portletId);
+                } catch(PortalException e) {
+                    LOG.error("Unable to remove portlet", e);
+                }
             }
         }
 
     }
-
 
     @Reference
     protected void setServiceRef(PortletRemoverService serviceRef) {
