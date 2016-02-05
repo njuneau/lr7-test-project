@@ -8,6 +8,7 @@
         <relativePath>../</relativePath>
     </parent>
     <artifactId>portlet-remover-web</artifactId>
+    <name>Portlet Remover Portlet</name>
     <packaging>bundle</packaging>
 
 
@@ -105,10 +106,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>

@@ -8,8 +8,8 @@
         <relativePath>../</relativePath>
     </parent>
     <artifactId>portlet-remover-api</artifactId>
+    <name>Portlet Remover API bundle</name>
     <packaging>bundle</packaging>
-
 
     <dependencies>
 

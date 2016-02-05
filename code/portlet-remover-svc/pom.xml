@@ -8,6 +8,7 @@
         <relativePath>../</relativePath>
     </parent>
     <artifactId>portlet-remover-svc</artifactId>
+    <name>Portlet Remover service implementation bundle</name>
     <packaging>bundle</packaging>
 
 
