@@ -130,7 +130,7 @@
                         <_sources>true</_sources>
                         <_jsp>*.jsp, *.jpsf</_jsp>
                         <_plugin.jsp>com.liferay.ant.bnd.jsp.JspAnalyzerPlugin</_plugin.jsp>
-                        <_includeresource>META-INF/resources=src/main/resources/META-INF/resources</_includeresource>
+                        <_includeresource>/=src/main/resources,META-INF/resources=src/main/resources/META-INF/resources</_includeresource>
                     </instructions>
                 </configuration>
             </plugin>
