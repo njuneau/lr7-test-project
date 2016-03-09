@@ -3,8 +3,8 @@ package com.liferay.training.portletremover.service;
 import java.util.List;
 
 import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.model.Layout;
-import com.liferay.portal.model.Portlet;
+import com.liferay.portal.kernel.model.Layout;
+import com.liferay.portal.kernel.model.Portlet;
 
 /**
  * This service is used to detect the portlets in a given layout and remove them

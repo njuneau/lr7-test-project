@@ -7,14 +7,14 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.model.Company;
-import com.liferay.portal.model.Layout;
-import com.liferay.portal.model.LayoutType;
-import com.liferay.portal.model.LayoutTypePortlet;
-import com.liferay.portal.model.Portlet;
-import com.liferay.portal.model.User;
-import com.liferay.portal.service.CompanyService;
-import com.liferay.portal.service.LayoutService;
+import com.liferay.portal.kernel.model.Company;
+import com.liferay.portal.kernel.model.Layout;
+import com.liferay.portal.kernel.model.LayoutType;
+import com.liferay.portal.kernel.model.LayoutTypePortlet;
+import com.liferay.portal.kernel.model.Portlet;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.service.CompanyService;
+import com.liferay.portal.kernel.service.LayoutService;
 import com.liferay.training.portletremover.service.PortletRemoverService;
 
 /**

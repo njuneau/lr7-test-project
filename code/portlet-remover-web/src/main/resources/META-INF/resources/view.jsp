@@ -3,7 +3,7 @@
 <%@ page import="java.util.List" %>
 
 <%
-    List<com.liferay.portal.model.Portlet> portlets = (List<com.liferay.portal.model.Portlet>) request.getAttribute("foundPortlets");
+    List<com.liferay.portal.kernel.model.Portlet> portlets = (List<com.liferay.portal.kernel.model.Portlet>) request.getAttribute("foundPortlets");
 %>
 <div class="table-responsive">
     <table class="table">
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
             <%
-            for(com.liferay.portal.model.Portlet p : portlets) {
+            for(com.liferay.portal.kernel.model.Portlet p : portlets) {
             %>
             <tr>
                 <td><span title="<%= p.getPortletId() %>"><%= p.getDisplayName() %></span></td>
