@@ -28,7 +28,7 @@
         <maven.bundle.plugin.version>2.5.0</maven.bundle.plugin.version>
 
         <liferay.version>7.0.0-SNAPSHOT</liferay.version>
-        <liferay.version.ant.bnd>2.0.0</liferay.version.ant.bnd>
+        <liferay.version.ant.bnd>2.0.9</liferay.version.ant.bnd>
         <version.portlet.api>2.0</version.portlet.api>
 
         <version.org.jboss.spec.javax.annotation>1.0.1.Final</version.org.jboss.spec.javax.annotation>
@@ -37,7 +37,7 @@
         <version.org.jboss.spec.javax.servlet.jsp>1.0.1.Final</version.org.jboss.spec.javax.servlet.jsp>
         <version.org.jboss.spec.javax.servlet.jstl>1.0.6.Final</version.org.jboss.spec.javax.servlet.jstl>
 
-        <version.bndlib>3.0.0</version.bndlib>
+        <version.bndlib>3.1.0</version.bndlib>
         <version.bndannotation>2.4.0</version.bndannotation>
         <version.osgi>5.0.0</version.osgi>
 
