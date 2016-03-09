@@ -10,7 +10,7 @@ whether they are deployed or not.
 Prerequisites
 -------------
 
-You will need at least **Java 7** and **Maven** to compile the project. Make
+You will need at least **Java 8** and **Maven** to compile the project. Make
 sure that the Liferay Maven Repositories are configured in your settings.
 
 Example Maven repository configuration in **~/.m2/settings.xml**:
@@ -24,6 +24,8 @@ Example Maven repository configuration in **~/.m2/settings.xml**:
 
 The repository must reside in an active Maven profile when you compile the
 project.
+
+The project can be run on Liferay 7 **Beta 8**.
 
 Compiling the components
 ------------------------
