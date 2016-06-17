@@ -36,8 +36,8 @@ import com.liferay.training.portletremover.service.PortletRemoverService;
         "com.liferay.portlet.instanceable=false",
         "javax.portlet.display-name=Portlet Remover",
         "javax.portlet.security-role-ref=power-user,user",
-        "javax.portlet.init-param.template-path=/",
-        "javax.portlet.init-param.view-template=/view.jsp",
+        "javax.portlet.init-param.template-path=/WEB-INF/",
+        "javax.portlet.init-param.view-template=/WEB-INF/view.jsp",
         "javax.portlet.resource-bundle=content.Language"
     }
 )

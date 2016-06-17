@@ -19,6 +19,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
+        <!-- Plugin versions -->
         <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
         <maven.resources.plugin.version>2.7</maven.resources.plugin.version>
         <maven.war.plugin.version>2.6</maven.war.plugin.version>
@@ -27,16 +28,27 @@
         <maven.jar.plugin.version>2.6</maven.jar.plugin.version>
         <maven.bundle.plugin.version>2.5.0</maven.bundle.plugin.version>
 
-        <liferay.version>7.0.0-SNAPSHOT</liferay.version>
-        <liferay.version.ant.bnd>2.0.9</liferay.version.ant.bnd>
+        <!-- Liferay artifact versions -->
+        <version.liferay.ant.bnd>2.0.19</version.liferay.ant.bnd>
+        <version.liferay.portal.impl>2.5.0</version.liferay.portal.impl>
+        <version.liferay.portal.kernel>2.6.0</version.liferay.portal.kernel>
+        <version.liferay.util.bridges>2.0.1</version.liferay.util.bridges>
+        <version.liferay.util.java>2.2.0</version.liferay.util.java>
+        <version.liferay.util.slf4j>1.0.1</version.liferay.util.slf4j>
+        <version.liferay.util.taglib>2.4.0</version.liferay.util.taglib>
         <version.portlet.api>2.0</version.portlet.api>
 
-        <version.org.jboss.spec.javax.annotation>1.0.1.Final</version.org.jboss.spec.javax.annotation>
-        <version.org.jboss.spec.javax.el>1.0.2.Final</version.org.jboss.spec.javax.el>
-        <version.org.jboss.spec.javax.servlet>1.0.2.Final</version.org.jboss.spec.javax.servlet>
+        <!-- Java EE artifacts versions -->
+        <version.org.jboss.spec.javax.annotation>1.0.0.Final</version.org.jboss.spec.javax.annotation>
+        <version.org.jboss.spec.javax.el>1.0.4.Final</version.org.jboss.spec.javax.el>
+        <version.org.jboss.spec.javax.servlet>1.0.0.Final</version.org.jboss.spec.javax.servlet>
         <version.org.jboss.spec.javax.servlet.jsp>1.0.1.Final</version.org.jboss.spec.javax.servlet.jsp>
-        <version.org.jboss.spec.javax.servlet.jstl>1.0.6.Final</version.org.jboss.spec.javax.servlet.jstl>
+        <version.org.jboss.spec.javax.servlet.jstl>1.1.2.Final</version.org.jboss.spec.javax.servlet.jstl>
+        <version.org.jboss.spec.javax.websocket>1.1.0.Final</version.org.jboss.spec.javax.websocket>
+        <version.javax.activation>1.1.1</version.javax.activation>
+        <version.javax.validation>1.1.0.Final</version.javax.validation>
 
+        <!-- OSGi artifacts versions -->
         <version.bndlib>3.1.0</version.bndlib>
         <version.bndannotation>2.4.0</version.bndannotation>
         <version.osgi>5.0.0</version.osgi>
@@ -47,68 +59,121 @@
     <dependencyManagement>
 
         <dependencies>
-            <dependency>
-                <groupId>com.liferay.portal</groupId>
-                <artifactId>portal-service</artifactId>
-                <version>${liferay.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.liferay.portal</groupId>
-                <artifactId>util-bridges</artifactId>
-                <version>${liferay.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.liferay.portal</groupId>
-                <artifactId>util-taglib</artifactId>
-                <version>${liferay.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.liferay.portal</groupId>
-                <artifactId>util-java</artifactId>
-                <version>${liferay.version}</version>
-            </dependency>
+
+            <!-- Liferay -->
+
             <dependency>
                 <groupId>com.liferay</groupId>
                 <artifactId>com.liferay.ant.bnd</artifactId>
-                <version>${liferay.version.ant.bnd}</version>
+                <version>${version.liferay.ant.bnd}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.portal.impl</artifactId>
+                <version>${version.liferay.portal.impl}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.portal.kernel</artifactId>
+                <version>${version.liferay.portal.kernel}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.util.bridges</artifactId>
+                <version>${version.liferay.util.bridges}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.util.java</artifactId>
+                <version>${version.liferay.util.java}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.util.slf4j</artifactId>
+                <version>${version.liferay.util.slf4j}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.liferay.portal</groupId>
+                <artifactId>com.liferay.util.taglib</artifactId>
+                <version>${version.liferay.util.taglib}</version>
+            </dependency>
+
             <dependency>
                 <groupId>javax.portlet</groupId>
                 <artifactId>portlet-api</artifactId>
                 <version>${version.portlet.api}</version>
             </dependency>
 
+            <!-- Java EE -->
+
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>${version.javax.activation}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${version.javax.validation}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.jboss.spec.javax.annotation</groupId>
-                <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+                <artifactId>jboss-annotations-api_1.2_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.annotation}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.spec.javax.el</groupId>
-                <artifactId>jboss-el-api_2.2_spec</artifactId>
+                <artifactId>jboss-el-api_3.0_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.el}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.spec.javax.servlet</groupId>
-                <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+                <artifactId>jboss-servlet-api_3.1_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.servlet}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.spec.javax.servlet.jsp</groupId>
-                <artifactId>jboss-jsp-api_2.2_spec</artifactId>
+                <artifactId>jboss-jsp-api_2.3_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.servlet.jsp}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.jboss.spec.javax.servlet.jstl</groupId>
                 <artifactId>jboss-jstl-api_1.2_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.servlet.jstl}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>xalan</groupId>
+                        <artifactId>xalan</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.websocket</groupId>
+                <artifactId>jboss-websocket-api_1.1_spec</artifactId>
+                <version>${version.org.jboss.spec.javax.websocket}</version>
+            </dependency>
+
+            <!-- OSGi / BND -->
 
             <dependency>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>biz.aQute.bndlib</artifactId>
                 <version>${version.bndlib}</version>
             </dependency>
+
             <dependency>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>biz.aQute.bnd.annotation</artifactId>
@@ -120,16 +185,19 @@
                 <artifactId>org.osgi.compendium</artifactId>
                 <version>${version.osgi}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
                 <version>${version.osgi}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.enterprise</artifactId>
                 <version>${version.osgi}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
