@@ -19,13 +19,13 @@ Example Maven repository configuration in **~/.m2/settings.xml**:
 
     <repository>
         <id>liferay-ce</id>
-        <url>https://repository.liferay.com/nexus/content/groups/liferay-ce/</url>
+        <url>https://repository.liferay.com/nexus/content/groups/public</url>
     </repository>
 
 The repository must reside in an active Maven profile when you compile the
 project.
 
-The project can be run on Liferay 7 **Beta 8**.
+The project can be run on Liferay 7 GA2
 
 Compiling the components
 ------------------------
@@ -41,5 +41,5 @@ This mill produce **jar** files in each of the 3 components build folders:
 * portlet-remover-svc/target
 * portlet-remover-web/target
 
-Deploy the component JARs to Liferay 7's **osgi** folder and voilà! You should
+Deploy the component JARs to Liferay 7's **deploy** folder and voilà! You should
 see a portlet appear in the **Training** section.
