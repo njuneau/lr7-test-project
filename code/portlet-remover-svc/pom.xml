@@ -71,6 +71,7 @@
                 <configuration>
                     <instructions>
                         <Private-Package>com.liferay.training.portletremover.service.impl</Private-Package>
+                        <Import-Package>com.liferay.portal.kernel.service;version="1.1.0",javax.portlet,javax.servlet,*</Import-Package>
                         <_dsannotations>*</_dsannotations>
                     </instructions>
                 </configuration>
