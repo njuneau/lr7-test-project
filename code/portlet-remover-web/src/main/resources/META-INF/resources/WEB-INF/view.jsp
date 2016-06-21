@@ -1,31 +1,25 @@
 <%@ include file="init.jsp" %>
 
-<%@ page import="java.util.List" %>
+<c:set var="namespace"><portlet:namespace /></c:set>
 
-<%
-    List<com.liferay.portal.kernel.model.Portlet> portlets = (List<com.liferay.portal.kernel.model.Portlet>) request.getAttribute("foundPortlets");
-%>
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr><th>Portlet Name</th><th>Action</th></tr>
         </thead>
         <tbody>
-            <%
-            for(com.liferay.portal.kernel.model.Portlet p : portlets) {
-            %>
-            <tr>
-                <td><span title="<%= p.getPortletId() %>"><%= p.getDisplayName() %></span></td>
-                <td>
-                    <form action="<portlet:actionURL name="removePortlet"><portlet:param name="portletId" value="<%= p.getPortletId() %>"/></portlet:actionURL>"
-                        method="POST">
-                        <input class="btn btn-danger" type="submit" value="Remove" />
-                    </form>
-                </td>
-            </tr>
-            <%
-            }
-            %>
+            <c:forEach items="${foundPortlets}" var="p">
+                <portlet:actionURL name="removePortlet" var="actionUrl" />
+                <tr>
+                    <td><span title="${p.portletId}">${p.displayName}</span></td>
+                    <td>
+                        <form action="${actionUrl}" method="POST">
+                            <input type="hidden" name="${namespace}portletId" value="${p.portletId}">
+                            <input class="btn btn-danger" type="submit" value="Remove" />
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
         </tbody>
     </table>
 </div>
